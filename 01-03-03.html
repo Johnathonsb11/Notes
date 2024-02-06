@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-03</title>     
+    </head>
+    <body>
+        <form>
+            <input type="button" value="Take Quiz" onclick="takeQuiz();">
+        </form>
+        <script>
+                let question_01 = "What is defined as a named block of code that can be called when needed";
+                let answer_01 = "function";
+
+                let question_02 = "What is defined as a value or expression containing data or code passed on to a function or procedure?";
+                let answer_02 = "argument";
+
+                let points = 0;
+                
+                function takeQuiz() {
+
+                    let response_01 = prompt(question_01);
+                    if (response_01 === answer_01) points++;
+
+                    let response_02 = prompt(question_02);
+                    if (response_02 === answer_01) points++;
+
+                    let grade = (points * 50);
+                }
+
+        </script>
+
+    </body>
+</html>
