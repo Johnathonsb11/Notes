@@ -259,5 +259,3 @@ function sayHi() {
 
 console.log(msg); // error! msg is local to the sayHi() function
 ```
-
-does this work
