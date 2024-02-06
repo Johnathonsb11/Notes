@@ -609,3 +609,13 @@ All ways you can add a Script to HTML
 Inline script should never be used. When scripts are placed in the head, page loading may be deferred (content is loaded after the script) therefore the proper location for loading scripts in an HTML page is at the very bottom of the body element.
 
 # Functions Methods and Events
+
+## Calling a Function
+
+### Passing Arguments to Functions
+
+#### Passing by value
+
+#### Passing by reference
+
+## Returning Values from Functions
