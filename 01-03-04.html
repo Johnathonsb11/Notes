@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-04</title>
+    </head>
+    <body>
+
+        <script>
+            /* refactor as quadrilatoral */
+            class Rectangle { // establishes a template for making objects. Similar to using a function like `function rect(height, width)`
+                constructor(height, width, base = 0) {
+                    this.height = height; // rectangle, square, rhombus, and parallelogram all only use the height and width parameters
+                    this.width = width;
+                    this.base = base; // used for trapezoid area
+                }
+                // getter
+                get area() {
+                    return this.calcRectombusArea();
+                }
+                // method
+                calcRectombusArea() {
+                    return this.height * this.width;
+                }
+
+                get trapArea() {
+                    return this.calcTrapArea();
+                }
+
+                calcTrapArea() {
+                    
+                    let calcedArea = ((this.width + this.base) / 2) * this.height;
+                    
+                    if (this.base == 0) {
+                        calcedArea * 2;
+                        return calcedArea;
+                    }
+                    else {
+                        return calcedArea;
+                    }
+
+                }
+            }
+
+            // square is an "object" of the "class", Rectangle
+            const square = new Rectangle(10, 10);
+            window.alert(square.trapArea);
+
+            const tallRectangle = new Rectangle(1000, 10);
+            window.alert(tallRectangle.area);
+
+            const tallerRectangle = new Rectangle(50000, 5);
+            window.alert(tallerRectangle.area);
+
+            const kite = new Rectangle(12, 11);
+            window.alert(kite.area);
+
+            const trapezoid = new Rectangle(15, 43, 12);
+            window.alert(trapezoid.trapArea);
+
+        </script>
+    </body>
+</html>
