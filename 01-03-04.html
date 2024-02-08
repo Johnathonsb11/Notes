@@ -59,11 +59,13 @@
 
             let inputShape = prompt('what shape?');
             let inputHeight = parseInt(prompt('what height?'));
-            let inputWidth = parseInt(prompt('what width?'));
+            // let inputWidth = parseInt(prompt('what width?'));
+            let inputWidth = inputShape === 'square' ? inputHeight : parseInt(prompt('what width?'));
             let inputBase = inputShape === 'trapezoid' ? parseInt(prompt('what base width')) : 0;
 
             const userShape = new Rectangle(inputShape, inputHeight, inputWidth, inputBase);
             console.log(userShape.area);
+            window.alert(`The area of your ${inputShape} is ${userShape.area}`);
             
         </script>
     </body>
