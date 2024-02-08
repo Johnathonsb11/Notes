@@ -9,55 +9,62 @@
         <script>
             /* refactor as quadrilatoral */
             class Rectangle { // establishes a template for making objects. Similar to using a function like `function rect(height, width)`
-                constructor(height, width, base = 0) {
+                constructor(shape, height, width, base = 0) {
+                    this.shape = shape;
                     this.height = height; // rectangle, square, rhombus, and parallelogram all only use the height and width parameters
                     this.width = width;
                     this.base = base; // used for trapezoid area
                 }
                 // getter
                 get area() {
-                    return this.calcRectombusArea();
+                    return this.calcArea();
                 }
                 // method
-                calcRectombusArea() {
-                    return this.height * this.width;
-                }
-
-                get trapArea() {
-                    return this.calcTrapArea();
-                }
-
-                calcTrapArea() {
-                    
-                    let calcedArea = ((this.width + this.base) / 2) * this.height;
-                    
-                    if (this.base == 0) {
-                        calcedArea * 2;
-                        return calcedArea;
+                calcArea() {
+                    switch (this.shape) {
+                        case 'square':
+                        case 'rectangle':
+                        case 'parallelogram':
+                            return this.width * this.height;
+                            break;
+                        case 'rhombus':
+                        case 'kite':
+                            return (this.width * this.height) / 2;
+                            break;
+                        case 'trapezoid':
+                            return (0.5 * (this.width + this.base) * this.height);
+                            break;
                     }
-                    else {
-                        return calcedArea;
-                    }
-
-                }
+                } 
             }
 
             // square is an "object" of the "class", Rectangle
-            const square = new Rectangle(10, 10);
-            window.alert(square.trapArea);
+            const square = new Rectangle('square', 10, 10);
+            console.log(square.area);
 
-            const tallRectangle = new Rectangle(1000, 10);
-            window.alert(tallRectangle.area);
+            const tallRectangle = new Rectangle('rectangle', 1000, 10);
+            console.log(tallRectangle.area);
 
-            const tallerRectangle = new Rectangle(50000, 5);
-            window.alert(tallerRectangle.area);
+            const parallelogram = new Rectangle('parallelogram', 25, 67);
+            console.log(parallelogram.area)
 
-            const kite = new Rectangle(12, 11);
-            window.alert(kite.area);
+            const rhombus = new Rectangle('rhombus', 11, 11);
+            console.log(rhombus.area);
 
-            const trapezoid = new Rectangle(15, 43, 12);
-            window.alert(trapezoid.trapArea);
+            const kite = new Rectangle('kite', 15, 31);
+            console.log(kite.area);
 
+            const trapezoid = new Rectangle('trapezoid', 7, 5, 6);
+            console.log(trapezoid.area);
+
+            let inputShape = prompt('what shape?');
+            let inputHeight = parseInt(prompt('what height?'));
+            let inputWidth = parseInt(prompt('what width?'));
+            let inputBase = inputShape === 'trapezoid' ? parseInt(prompt('what base width')) : 0;
+
+            const userShape = new Rectangle(inputShape, inputHeight, inputWidth, inputBase);
+            console.log(userShape.area);
+            
         </script>
     </body>
 </html>
