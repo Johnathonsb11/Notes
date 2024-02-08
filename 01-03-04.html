@@ -7,8 +7,8 @@
     <body>
 
         <script>
-            /* refactor as quadrilatoral */
-            class Quadrilatoral { // establishes a template for making objects. Similar to using a function like `function rect(height, width)`
+
+            class Quadrilateral { // establishes a template for making objects. Similar to using a function like `function rect(height, width)`
                 constructor(shape, height, width, base = 0) {
                     this.shape = shape;
                     this.height = height; // rectangle, square, rhombus, and parallelogram all only use the height and width parameters
@@ -38,23 +38,23 @@
                 } 
             }
 
-            // square is an "object" of the "class", Quadrilatoral
-            const square = new Quadrilatoral('square', 10, 10);
+            // square is an "object" of the "class", Quadrilateral
+            const square = new Quadrilateral('square', 10, 10);
             console.log(square.area);
 
-            const tallRectangle = new Quadrilatoral('rectangle', 1000, 10);
+            const tallRectangle = new Quadrilateral('rectangle', 1000, 10);
             console.log(tallRectangle.area);
 
-            const parallelogram = new Quadrilatoral('parallelogram', 25, 67);
+            const parallelogram = new Quadrilateral('parallelogram', 25, 67);
             console.log(parallelogram.area)
 
-            const rhombus = new Quadrilatoral('rhombus', 11, 11);
+            const rhombus = new Quadrilateral('rhombus', 11, 11);
             console.log(rhombus.area);
 
-            const kite = new Quadrilatoral('kite', 15, 31);
+            const kite = new Quadrilateral('kite', 15, 31);
             console.log(kite.area);
 
-            const trapezoid = new Quadrilatoral('trapezoid', 7, 5, 6);
+            const trapezoid = new Quadrilateral('trapezoid', 7, 5, 6);
             console.log(trapezoid.area);
 
             let inputShape = prompt('what shape?');
@@ -62,7 +62,7 @@
             let inputWidth = inputShape === 'square' ? inputHeight : parseInt(prompt('what width?'));
             let inputBase = inputShape === 'trapezoid' ? parseInt(prompt('what base width')) : 0;
 
-            const userShape = new Quadrilatoral(inputShape, inputHeight, inputWidth, inputBase);
+            const userShape = new Quadrilateral(inputShape, inputHeight, inputWidth, inputBase);
             console.log(userShape.area);
             window.alert(`The area of your ${inputShape} is ${userShape.area}`);
             
