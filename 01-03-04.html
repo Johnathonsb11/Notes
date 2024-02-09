@@ -21,7 +21,7 @@
                 }
                 // method
                 calcArea() {
-                    switch (this.shape) {
+                    /* switch (this.shape) { did this at first but figured an if else would simplify things
                         case 'square':
                         case 'rectangle':
                         case 'parallelogram':
@@ -34,6 +34,15 @@
                         case 'trapezoid':
                             return (0.5 * (this.width + this.base) * this.height);
                             break;
+                    } */
+                    if (this.shape === 'square' || 'rectangle' || 'parallelogram') {
+                        return this.width * this.height;
+                    }
+                    else if (this.shape === 'rhombus' || 'kite') {
+                        return (this.width * this.height) / 2;
+                    }
+                    else {
+                        return (0.5 * (this.width + this.base) * this.height);
                     }
                 } 
             }
