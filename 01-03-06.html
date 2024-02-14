@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-06</title>     
+    </head>
+    <body>
+        <h1>JavaScript Functions</h1>
+        <p>
+            In JavaScript, functions are objects.<br>
+            This means that functions have properties, methods, and events.<br>
+            The arguments property is an array-like object.
+        </p>
+
+        <script>
+            // todo: write a function that can concatenate n-number of strings
+            // using a provided token seperator
+
+            // myFunction('-', 'one', 'two', 'three');
+            // output: one-two-three
+
+            //Function Declaration
+            function stringKitty(token) {
+                let newString = '';
+                for (let i = 1; i < arguments.length; i++) {
+                    newString += arguments[i] + token;
+                }
+                return newString;
+            }
+
+            // Function Expression
+            const square = function(num) {
+                return num * num;
+            }
+
+            console.log(square(5));
+
+            if (typeof(square) === 'function') {
+                console.log('exists');
+            }
+            else {
+                console.log('doesnt exist');
+            }
+
+            let numberDog = function() {
+                let sum = 0;
+                for (let i = 0; i < arguments.length; i++) {
+                    sum += arguments[i];
+                }
+                return sum;
+            }
+
+        </script>
+    </body>
+</html>
