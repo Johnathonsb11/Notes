@@ -580,11 +580,11 @@ let y = 25 + 1; // + performs arithmetic addition
 let z += 30; // += performs arithmetic addition
 
 let first = "Tad"
-let last = "Dahmitz"
+let last = "Damitz"
 let name = first + " " + last; // + performs concatenation
 let fullname = first; // name = "Tad"
 fullName += " ";      // name = "Tad "
-fullName += last;     // name = "Tad Dahmitz"
+fullName += last;     // name = "Tad Damitz"
 ```
 
 ## Inline Scripting, Simple User Events, and Basic Event Handlers
@@ -618,4 +618,18 @@ Inline script should never be used. When scripts are placed in the head, page lo
 
 #### Passing by reference
 
-## Returning Values from Functions
+### Returning Values from Functions
+
+## Built-In Functions
+
+- `parseInt()`
+
+- `parseFloat()`
+
+## Methods
+
+ Methods are functions that are part of a class
+
+## `this` Keyword
+
+The [`this`]([this - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)) keyword refers to the **current owner** of a ***function, code, object, etc.***
