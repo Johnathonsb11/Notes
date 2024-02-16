@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>2023-24-01-03-07</title>
+    </head>
+    <body>
+        <h1>The this keyword</h1>
+        <p>
+            The this keyword will always be the object that's calling a function.
+            <ul>
+                <li>Inside a class, the object executing the method is the object it belongs to.</li>
+                <li>Outside a class, the object executing a function is the window object.</li>
+            </ul>
+        </p>
+
+        <script>
+            /*
+
+            console.log(this); // returns window
+
+            const obj = {
+                dowork() {
+                    console.log(this); // returns Object
+                }
+
+            }
+
+            obj.dowork();
+
+            function kitty() { // when you declare a global function, it attaches it to the window prototype
+                console.log(this);
+            }
+
+            kitty();
+
+            function doggy() {
+                console.log(this);
+            }
+            
+
+            const cat = {
+                name: 'Kitty purry',
+                talk() {
+                    console.log(this);
+                }
+            }
+
+            cat.talk();
+
+            cat.walk = function() {
+                console.log(this);
+            }
+
+            function kitty(name) {
+                this.name = name;
+                console.log(this);
+            }
+
+            kitty('stanley');
+
+            function Kitty(name) {
+                this.name = name;
+                console.log(this);
+            } 
+            
+            */
+            
+            /*
+            
+            window.x = 100;
+            window.y = 100;
+            function printCoordinates() {
+                console.log(this.x, this.y);
+            } 
+            
+            */
+
+            const computer = {
+                brand: 'hp',
+                parts: ['gpu', 'cpu', 'ram'],
+                listParts() {
+
+                    this.parts.forEach(function (part) {
+                        console.log(this.brand, part);
+                    }, this); // determines what we want this to reference
+
+                    this.parts.forEach((part)=> { 
+                        console.log(this.brand, part);
+                    }); // using a pointer function bypasses needing to specify what this is, for some reason...
+                }
+            };
+
+        </script>
+    </body>
+</html>
