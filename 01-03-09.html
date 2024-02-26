@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>01-03-09</title>
+    </head>
+    <body>
+        <script>
+            // JS Functions
+
+            // Standard Named Function
+            function sum(a, b) {
+                return a + b;
+            }
+
+            function greet() {
+                alert('hi!');
+            }
+
+            let msg = 'TESTING';
+            function testing() {
+                let msg = 'testing';
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+                console.log(msg);
+            }
+
+            /*
+                1. Standard Functions
+                2. Anonymous Functions - a function with no name
+                3. Prototype Functions
+                4. Closure Functions
+                5. Arrow Functions
+            */
+
+            // This is a Function Expression that assigns an Anonymous Function to a Function Object
+            const double = function (num) {
+                return num * 2;
+            }
+
+            const nums = [1, 2, 3];
+            nums.forEach(function (num) {
+                console.log(num / 2);
+            });
+
+            const ob = {
+                nums: [1, 2, 3],
+                triple: function() {
+                    this.nums.forEach(function(n) {
+                        console.log(n * 3);
+                    });
+                }
+            }
+
+
+        </script>    
+    </body>
+</html>
