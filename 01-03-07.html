@@ -2,7 +2,7 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
-        <title>2023-24-01-03-07</title>
+        <title>01-03-07</title>
     </head>
     <body>
         <h1>The this keyword</h1>
@@ -64,32 +64,75 @@
                 console.log(this);
             } 
             
-            */
-            
-            /*
-            
+
             window.x = 100;
             window.y = 100;
             function printCoordinates() {
                 console.log(this.x, this.y);
             } 
             
-            */
 
             const computer = {
                 brand: 'hp',
                 parts: ['gpu', 'cpu', 'ram'],
                 listParts() {
-
                     this.parts.forEach(function (part) {
-                        console.log(this.brand, part);
-                    }, this); // determines what we want this to reference
+                        console.log(this.brand, part); // without the thisArg on the method, this refers to window because this uses scope to determine what it refers to, this.brand is in the function scope while this.parts and the thisArg are in the scope of the computer object.
+                    }, this); // determines what we want this to reference, we dont control what scoep this refers to, the browser does, in this case the browser chooses the computer object.
 
-                    this.parts.forEach((part)=> { 
+                    this.parts.forEach((part)=> { // a function without a name is an 'anonymous function'
                         console.log(this.brand, part);
-                    }); // using a pointer function bypasses needing to specify what this is, for some reason...
+                    }); // using a pointer function bypasses needing to specify what this is since arrow functions dont have their own bindings to this
                 }
             };
+
+            computer.listParts();
+
+            
+
+            function greet(first, last) {
+                console.log(`Hello, ${first} ${last}`);
+                console.log(this);
+            }
+
+            
+            Function.prototype.call
+
+            The call() method allows you to call a function and pass in a value for the this keyword.
+
+            This allows you to add extra functionality to an object without actually adding a new method to the object.
+
+            
+
+            // call greet as we normally would but control the value of it's this keyword
+
+            greet.call(
+                {age: 15, grade: 10},
+                'Tad',
+                'Damitz'
+            );
+
+            */
+
+            function sum(a, b) {
+                console.log(this);
+                return a + b;
+            }
+
+            //sum.call({}, 10, 20);
+
+            //sum.apply({}, [20, 30]); // both do the same thing aside from how they get arguments
+
+            function greet(first, middle, last) {
+                console.log(this);
+                console.log(`${first} ${middle} ${last}`);
+            }
+
+            //greet.call({}, 'Chris', 'P', 'Bacon');
+            //greet.apply({}, ['Chris', 'P', 'Bacon']);
+
+            const boundGreetFunction = greet.bind({}, ['Casey', ' ', 'Diya']);
+
 
         </script>
     </body>
