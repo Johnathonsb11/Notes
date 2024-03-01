@@ -3,92 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>Pronounce</title>
+        <link href="Pronounce.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div>
-            <input type="text" id="numIn" name="numIn" required maxlength="3">
+            <input type="text" id="numIn" name="numIn" placeholder="3-digit number, can be negative">
             <p id="proOut"></p>
         </div>
 
-        <script>
-            const numIn = document.getElementById('numIn');
-            const pronunciation = document.getElementById('proOut');
-            
-            numIn.addEventListener('keyup', (event) => {
-                if (event.key === 'Enter') {
-                    pronunciation.textContent = '';
-
-                    let inputValue = document.getElementById('numIn').value;
-
-                    let finalPro = '';
-                    
-                    if (inputValue >= '100') {
-                        switch(inputValue.slice(0, 1)) {
-                            case '1':
-                                pronunciation.textContent = 'One hundred';
-                                break;
-                            case '2':
-                                pronunciation.textContent = 'Two hundred';
-                                break;
-                            case '3':
-                                pronunciation.textContent = 'Three hundred';
-                                break;
-                            case '4':
-                                pronunciation.textContent = 'Four hundred';
-                                break;
-                            case '5':
-                                pronunciation.textContent = 'Five hundred';
-                                break;
-                            case '6':
-                                pronunciation.textContent = 'Six hundred';
-                                break;
-                            case '7':
-                                pronunciation.textContent = 'Seven hundred';
-                                break;
-                            case '8':
-                                pronunciation.textContent = 'Eight hundred';
-                                break;
-                            case '9':
-                                pronunciation.textContent = 'Nine hundred';
-                                break; 
-                        }
-                    }
-
-                    if (inputValue >= '10') {
-                        switch(inputValue.slice(1, 2)) {
-                            case '1':
-                                pronunciation.textContent = 'One hundred';
-                                break;
-                            case '2':
-                                pronunciation.textContent = 'Two hundred';
-                                break;
-                            case '3':
-                                pronunciation.textContent = 'Three hundred';
-                                break;
-                            case '4':
-                                pronunciation.textContent = 'Four hundred';
-                                break;
-                            case '5':
-                                pronunciation.textContent = 'Five hundred';
-                                break;
-                            case '6':
-                                pronunciation.textContent = 'Six hundred';
-                                break;
-                            case '7':
-                                pronunciation.textContent = 'Seven hundred';
-                                break;
-                            case '8':
-                                pronunciation.textContent = 'Eight hundred';
-                                break;
-                            case '9':
-                                pronunciation.textContent = 'Nine hundred';
-                                break; 
-                        }
-                    }
-                }
-            });
-
-            
-        </script> 
+        <script src="Pronounce.js"></script> 
     </body>
 </html>
