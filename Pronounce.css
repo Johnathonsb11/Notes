@@ -2,33 +2,55 @@
 
 body {
     background-color: rgb(74, 74, 74);
+    opacity: 0.9;
+    background-image:  linear-gradient(rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(to right, rgba(255, 205, 190, 0.3) 0px, rgb(74, 74, 74) 1px);
+    background-size: 20px 20px;
 }
 
 div {
+    height: 95vh;
     display: flex;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
 }
 
 #proOut {
+    padding: 1vh;
+    height: 10vh;
     text-align: center;
     font-family: "Alegreya SC", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 50px;
-    color: rgb(255, 223, 190);
+    font-size: 7vh;
+    color: rgb(255, 205, 190);
+    background-color: rgb(55, 55, 55);
+    border: 2px rgb(255, 223, 190) dashed;
+    position: relative;
+    top: 25vh;
+    transition: width 300ms ease;
 }
 
 #numIn {
     text-align: center;
-    background-color: black;
-    border: none;
-    border-radius: 25%;
-    width: 100px;
+    background-color: rgb(55, 55, 55);
+    border: 2px rgb(255, 223, 190) dashed;
+    border-radius: 15%;
+    outline: 2px rgb(255, 223, 190) dashed;
+    outline-offset: -2px;
+    width: 15vh;
+    height: 10vh;
     font-family: "Alegreya SC", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 35px;
-    color: rgb(255, 223, 190);
+    font-size: 5vh;
+    color: rgb(255, 205, 190);
+    position: relative;
+    top: 15vh;
+    transition: outline-offset 300ms ease;
 }
+
+#numIn:focus {
+    outline: 2px rgb(255, 223, 190) solid;
+    outline-offset: 3px;
+}
+
