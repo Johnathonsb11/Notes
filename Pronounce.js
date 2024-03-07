@@ -103,6 +103,9 @@ numIn.addEventListener('keyup', (event) => {
         }
         if (inputValue.length >= 1 && inputValue[1] !== '1') {
             switch(inputValue[0]) {
+                case '0':
+                    finalPron += 'zero';
+                    break;
                 case '1':
                     finalPron += 'one';
                     break;
@@ -132,6 +135,13 @@ numIn.addEventListener('keyup', (event) => {
                      break;
             }
         }
+
+        if (inputValue.length >= 4) {
+            finalpron += '';
+
+            finalPron += 'nope!';
+        }
+
         pronunciation.textContent = finalPron;
     }
 });
