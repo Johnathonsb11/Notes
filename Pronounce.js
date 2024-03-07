@@ -136,12 +136,6 @@ numIn.addEventListener('keyup', (event) => {
             }
         }
 
-        if (inputValue.length >= 4) {
-            finalpron += '';
-
-            finalPron += 'nope!';
-        }
-
         pronunciation.textContent = finalPron;
     }
 });
