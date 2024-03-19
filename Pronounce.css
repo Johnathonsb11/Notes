@@ -3,7 +3,7 @@
 body {
     background-color: rgb(74, 74, 74);
     opacity: 0.9;
-    background-image:  linear-gradient(94deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(86deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(176deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(184deg, rgba(255, 205, 190, 0.3) 0px, rgb(74, 74, 74) 1px);
+    background-image:  linear-gradient(95deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(85deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(175deg, rgba(255, 205, 190, 0.3) 0px, transparent 1px), linear-gradient(185deg, rgba(255, 205, 190, 0.3) 0px, rgb(74, 74, 74) 1px);
     background-size: 20px 20px;
 }
 
@@ -15,24 +15,42 @@ div {
 }
 
 #proOut {
-    padding: 1vh;
     height: 10vh;
+    width: 125vh;
+    padding: 1vh;
     text-align: center;
+    text-shadow: 4px 4px rgba(255, 205, 190, 0.3), 2px 2px rgba(255, 205, 190, 0.5);
     font-family: "Alegreya SC", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 7vh;
     color: rgb(255, 205, 190);
     background-color: rgb(55, 55, 55);
-    border: 2px rgb(255, 223, 190) dashed;
+    border: 2px rgb(255, 223, 190) solid;
     position: relative;
     top: 25vh;
+    animation: cubic-bezier(0.4, 0.25, 0.1, 1.05) 1.5s expand-width;
+}
+
+@keyframes expand-width {
+    from {
+        top: 32vh;
+        width: 0vh;
+        font-size: 0vh;
+    }
+
+    to {
+        top: 25vh;
+        width: 125vh;
+        font-size: 7vh;
+    }
 }
 
 #numIn {
     text-align: center;
+    text-shadow: 0px 0px rgba(255, 205, 190, 0.3), 0px 0px rgba(255, 205, 190, 0.5);
     background-color: rgb(55, 55, 55);
-    border: 2px rgb(255, 223, 190) dashed;
+    border: 2px rgb(255, 231, 207) dashed;
     border-radius: 15%;
     outline: 2px rgb(255, 223, 190) solid;
     outline-offset: -2px;
@@ -45,11 +63,15 @@ div {
     color: rgb(255, 205, 190);
     position: relative;
     top: 15vh;
-    transition: outline-offset 300ms ease;
+    transition: outline-offset 400ms cubic-bezier(0.4, 0.3, 0.2, 1), background-color 400ms cubic-bezier(0.4, 0.3, 0.2, 1), text-shadow 800ms cubic-bezier(0.4, 0.3, 0.2, 1);
 }
 
 #numIn:focus {
     outline: 2px rgb(255, 223, 190) solid;
     outline-offset: 5px;
+
+    background-color: rgb(65, 65, 65);
+
+    text-shadow: 4px 4px rgba(255, 205, 190, 0.3), 2px 2px rgba(255, 205, 190, 0.5);
 }
 
