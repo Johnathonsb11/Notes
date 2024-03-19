@@ -7,7 +7,7 @@ function shrink() {
     pronunciation.animate(
         [
             { transform: "scaleY(1)", borderWidth: "2px", borderLeftWidth: "2px", borderRightWidth: "2px"},
-            { transform: "scaleY(0)", borderWidth: "23px", borderLeftWidth: "5px", borderRightWidth: "5px"},
+            { transform: "scaleY(0)", borderWidth: "23px", borderLeftWidth: "2px", borderRightWidth: "2px"},
         ],
         {
             duration: 700,
@@ -19,8 +19,8 @@ function shrink() {
 function grow() {
     pronunciation.animate(
         [
-            { transform: "scaleY(0)", borderWidth: "23px", borderLeftWidth: "5px", borderRightWidth: "5px"},
-            { transform: "scaleY(1)", borderWidth: "2px", borderLeftWidth: "2xp", borderRightWidth: "2px"},
+            { transform: "scaleY(0)", borderWidth: "23px", borderLeftWidth: "2px", borderRightWidth: "2px"},
+            { transform: "scaleY(1)", borderWidth: "2px", borderLeftWidth: "2px", borderRightWidth: "2px"},
         ],
         {
             duration: 600,
