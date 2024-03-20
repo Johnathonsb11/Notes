@@ -1,7 +1,8 @@
 const numIn = document.getElementById('numIn');
 const pronunciation = document.getElementById('proOut');
-
 const border = pronunciation.style.borderWidth;
+const container = document.getElementById('container');
+const body = window.document.body;
 
 function shrink() {
     pronunciation.animate(
@@ -28,6 +29,13 @@ function grow() {
         }
     )
 }
+
+container.addEventListener("mousemove", function(e) {
+    if (e.target === container) {
+        body.style.backgroundPositionX = -e.offsetX * 0.05 + "px";
+        body.style.backgroundPositionY = -e.offsetY * 0.05 + "px";      
+    }
+});
 
 numIn.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') { 
