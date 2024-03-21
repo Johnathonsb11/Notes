@@ -87,6 +87,10 @@
 
 * **Event Bubbing and Event Capturing** - These are the ways in which events are propagated in the HTML DOM, which in turn defines the order in which the elements of the DOM recieve the event.
 
+---
+
+# [Lesson 1.1](https://docs.google.com/document/d/1XI4eYGaIjhC-2qbCX3IQvygZTwNyJJNSi2UKjHUl2LU/edit)
+
 # Lesson Plan 1.2:
 
 **1.2.1** - Use attributes and methods to communicate with users, including the `type` attribute.
@@ -608,9 +612,26 @@ All ways you can add a Script to HTML
 
 Inline script should never be used. When scripts are placed in the head, page loading may be deferred (content is loaded after the script) therefore the proper location for loading scripts in an HTML page is at the very bottom of the body element.
 
+# Lesson Plan 1.3:
+
+**1.3.1** - Define and use methods as functions.
+
+**1.3.2** - Demonstrate the use of various types of functions and function elements including
+*prototype functions*, *anonymous functions*, *closure functions*, *arguments*, and the use of *return values*.
+
+**1.3.3** - Distinguish between global and local variables.
+
+**1.3.4** - Use the condition operator.
+
+**1.3.5** - Identify user events and event handlers.
+
+**1.3.6** - Demonstrate the use of **function-specific methods** including *calling*, *binding*, and *applying*.
+
+**1.3.7** - Use *built-in function* and *cast* variables.
+
 # Functions Methods and Events
 
-## Calling a Function
+## Calling a Function (1.3.2?)
 
 ### Passing Arguments to Functions
 
@@ -626,10 +647,10 @@ Inline script should never be used. When scripts are placed in the head, page lo
 
 - `parseFloat()`
 
-## Methods
+## Methods (1.3.1)
 
  Methods are functions that are part of a class
 
 ## `this` Keyword
 
-The [`this`]([this - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)) keyword refers to the **current owner** of a ***function, code, object, etc.***
+The [`this`]([this - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)) keyword refers to the **current owner** of a ***function, code, object, etc.*** 
