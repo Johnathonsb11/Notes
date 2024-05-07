@@ -24,7 +24,7 @@
   
 - **Pass by Reference** - A mode that describes when values are passed to a function, and the function's parameters receive its argument's actual value.
   
-- **[Event Bubbling and Event Capturing**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling) - These are how events are propagated in HTML DOM, which in turn defines the order in which the elements of the DOM receive the event.
+- **[Event Bubbling and Event Capturing]**(https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling) - These are how events are propagated in HTML DOM, which in turn defines the order in which the elements of the DOM receive the event.
   
 
 ## Packet 2 - Debugging and Troubleshooting
@@ -46,7 +46,7 @@
   
 - **Helper Application** - It is an application launched separately from the browser that helps the browser render certain file types, such as .pdf, .mpeg, and .doc.
   
-- **[HTML Entity]**(https://developer.mozilla.org/en-US/docs/Glossary/Entity) - It contains symbol characters (such as < or &) that can be represented as themselves or, in HTML, as an alphanumeric code for purposes of programming or security. Also known as HTML escape characters.
+- [**HTML Entity**](https://developer.mozilla.org/en-US/docs/Glossary/Entity) - It contains symbol characters (such as < or &) that can be represented as themselves or, in HTML, as an alphanumeric code for purposes of programming or security. Also known as HTML escape characters.
   
 - **Infinite Loop** - It is a JavaScript statement that has no attainable conditions for ending, and thus requires the user to close the browser in order to end the script.
   
@@ -81,6 +81,8 @@
 ---
 
 # Notes
+
+---
 
 ## Packet 1 - Functions, Methods, and Events
 
@@ -235,3 +237,119 @@
 > The `GLobalFetch.fetch()` method is used to make a request. It is also implemented in the Window interface. It takes a mandatory argument, the type of resource to fetch. This request returns a promise that is resolved into the Response object. The promise is returned whether the request is successful or not.
 > 
 > The `promise` object allows the use of asynchronous code in a synchronous manner. For example, while making an asynchronous call to a web server, a promise object is created. This object represents the data that will be returned by the web server, sometime in the future. For the time, the actual data is not received from the server, the promise object serves as proxy data. Also, once the data is available, callbacks can be attached to it. Promises let developers use asynchronous code with more ease.
+
+---
+
+# Missed Assessment Questions
+
+---
+
+## JSS Assessment 01 | 5/6/24
+
+> You want to provide a customized webpage for each user. The customized webpage will be displayed immediately after logon. What can you use to meet this goal?
+> 
+> > **My answer:**
+> > 
+> > You should use AJAX
+> 
+> > **Correct answer:**
+> > 
+> > You should use server-side JavaScript
+> 
+> > **Feedback:**
+> > 
+> > Server-Side JavaScript (SSJS) is a JavaScript's server-side scripting environment. It allows connection to databases and supports many of the rich features and functions of any server-side scripting language. For example, it enables you to connect webpages to databases, enables server-side image maps and saves client state so the computer will remember where the client is during a multi-page process.
+> > 
+> > Domain 4: JavaScript Technology Extensions
+> > 4.1: Implement JavaScript libraries and frameworks
+
+> You are editing an XHTML webpage. You referenced jQuery in the <script> section, located between the <head> section. You noticed the 
+> page is not displaying correctly in Chrome even though it rendered 
+> correctly prior to the jQuery reference. You have verified Chrome has been updated and there are no typos in the jQuery reference. How can you resolve this issue?
+> 
+> > **My answer:**
+> > 
+> > Find a different solution becuase jQuery is not compatible with Chrome
+> 
+> > **Correct answer:**
+> > 
+> > Update the webpage to the most current version of HTML
+> 
+> > **Feedback:**
+> > 
+> > Good practices when writing webpage code for jQuery include:
+> > 
+> > - Use the latest version of HTML
+> >   
+> > - Use W3C-standard coding practices
+> >   
+> > - Check code carefully for up-to-date elements and attributes, correct syntax, capitalization and properly closed tags
+> >   
+> > - Avoid using deprecated elements
+> >   
+> > - Reference each jQuery and primary library reference in a separate `<script>` tag pair, located in the `<head>` tag pair.
+> >   
+> > - Pay attention when using multiple $ variables as a shortcut reference. The HTML interpreter will consider the library reference in the first `<script>` tag as the library to consult.
+> >   
+> > 
+> > Domain 4: JavaScript Technology Extensions
+> > 
+> > 4.1: Implement JavaScript libraries and frameworks
+
+> You are using the computer in the spare office for the day. You test the app you have been working on and notice the output does not display the same as it did in your office. The code has not changed since you last tested it in your office. You verified the browser software is up to date. The computer has sufficient resources, such as RAM and CPU speed. What can be causing the problem?
+> 
+> > **My answer:**
+> > 
+> > script interpretation
+> 
+> > **Correct answer:**
+> > 
+> > monitor resolution
+> 
+> > **Feedback:**
+> > 
+> > Browsers can appear to behave differently for several reasons, including monitor resolution. Some users still have 17-inch VGA monitors. And on every monitor, color, and dots-per-inch (DPI) resolution can be different.
+> > 
+> > Domain 2: Intermediate JavaScript Programming Techniques
+> > 
+> > 2.1: Debug and troubleshoot JavaScript code
+
+> You are currently using React and want users to select the background and font colors on a webpage. The changes should appear without rebuilding the page. What can you use to accomplish this task?
+> 
+> > **My answer:**
+> > 
+> > You can use jQuery that will query the page and render without rebuilding the webpage.
+> 
+> > **Correct answer:**
+> > 
+> > You can use virtual DOM that will render user’s color choices without rebuilding the webpage.
+> 
+> > **Feedback:**
+> > 
+> > Every time a DOM changes the layout, this requires a lot of work from the browser. It must re-read the CSS, change the layout, and rebuild the page. With the virtual DOM there is no longer a need to update each element when the layout of the DOM changes. Also, rendering the virtual DOM is a lot faster than rendering actual browser DOM. React, a popular JavaScript library, uses the virtual DOM, making pages created with React much more efficient than pages created without the virtual DOM.
+> > 
+> > Domain 2: Intermediate JavaScript Programming Techniques
+> > 
+> > 2.3: Use the JavaScript Document Object Model (DOM).
+
+> You need to use asynchronous code in a 
+> synchronous manner. You need a proxy, instead of the actual data, to be returned by the web server. You plan on using a callback once the data is available. What will you use to accomplish this task?
+> 
+> > **My answer:**
+> > 
+> > You will use an XMLHttpRequest
+> 
+> > **Correct answer:**
+> > 
+> > You will use a promise object
+> 
+> > **Feedback:**
+> > 
+> > We know that the promise object is used to retrieve the response of the request, but why use it? The promise object allows the use of 
+> > asynchronous code in a synchronous manner. For example, while making an asynchronous call to a web server, a promise object is created. This object represents the data that will be returned by the web server, sometime in the future. For the time, the actual data is not received from the server, the promise object serves as proxy data. Also, once the data is available, callbacks can be attached to it.
+> > 
+> > Domain 4: JavaScript Technology Extensions
+> > 
+> > 4.2: Use JavaScript and AJAX to create interactive Web applications.
+
+## JSS Assessment 02 | 5/7/24
