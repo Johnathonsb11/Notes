@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Web APIs</title>
+    </head>
+    <body>
+        <h1>Web ApIs</h1>
+        <ul>
+            <li>
+                <h2>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank">Web Storage API</a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage " target="_blank">Storage</a>
+                    </li>
+                    <li>localStorage</li>
+                    <li>setItem()</li>
+                    <li>getItem()</li>
+                    <li>removeItem()</li>
+                    <li>
+                        <button id="btnRemoveItem">Remove Item</button>
+                    </li>
+                    <li>clear()</li>
+                    <li>
+                        <button id="btnClearStorage">Clear Storage</button>
+                    </li>
+                    <li>
+                        <button id="changeLocalStorage">Change Local Storage</button>
+                    </li>
+                    <li>sessionStorage</li>
+                    <li>
+                        <button id="changeSessionStorage">Change Session Storage</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" target="_blank">Geolocation API</a>
+                    <br>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples" target="_blank">Examples</a>
+                </h2>
+            </li>
+            <li>
+                <h2>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank">Canvas API</a>
+                </h2>
+            </li>
+        </ul>
+        <script>
+            if (!localStorage.getItem('to_be_removed')) {
+                localStorage.setItem('to_be_removed', 'this is to be removed by the removeItem() method');
+            }
+
+            if (!localStorage.getItem('name')) {
+                localStorage.setItem('name', 'Tad');
+            }
+
+            sessionStorage.setItem('temp', 'this is for the session');
+
+            const btnChangeLocalStorage = document.getElementById('changeLocalStorage');
+            btnChangeLocalStorage.addEventListener('click', ()=> {
+                localStorage.setItem('name', 'Fred');
+            });
+
+            const btnChangeSessionStorage = document.getElementById('changeSessionStorage');
+            btnChangeSessionStorage.addEventListener('click', ()=> {
+                sessionStorage.setItem('temp', 'changed while in a session');
+            });
+
+            const btnRemoveItem = document.getElementById('btnRemoveItem')
+            btnRemoveItem.addEventListener('click', ()=> {
+                localStorage.removeItem('to_be_removed');
+            });
+
+            const btnClearStorage = document.getElementById('btnClearStorage');
+            btnClearStorage.addEventListener('click', ()=> {
+                localStorage.clear();
+            })
+        </script>
+    </body>
+</html>

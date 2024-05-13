@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tissueFamilies>
+    <tissueFamily name="Animal">
+        <tissueCatergories>
+            <tissueCategory name="Epithilial">
+                <tissueType name="Simple Squamous"></tissueType>
+                <tissueType name="Simple Cuboidal"></tissueType>
+                <tissueType name="Simple Columnar"></tissueType>
+                <tissueType name="Stratified Squamous"></tissueType>
+                <tissueType name="Pseudostratified Columnar"></tissueType>
+            </tissueCategory>
+            <tissueCategory name="Connective">
+                <tissueType name="Loose Connective"></tissueType>
+                <tissueType name="Dense Connective"></tissueType>
+                <tissueType name="Cartilagenous"></tissueType>
+                <tissueType name="Compact Bone"></tissueType>
+                <tissueType name="Adipose"></tissueType>
+                <tissueType name="Blood"></tissueType>
+            </tissueCategory>
+            <tissueCategory name="Muscle">
+                <tissueType name="Smooth"></tissueType>
+                <tissueType name="Cardiac"></tissueType>
+                <tissueType name="Skeletal"></tissueType>
+            </tissueCategory>
+            <tissueCategory name="Nervous"/>
+        </tissueCatergories>
+    </tissueFamily>
+    <tissueFamily name="Plant"/>
+</tissueFamilies>
+
+<!-- ORM 
+    Map our data to our objects
+    create a class mapped to data
+    tissue families -> array
+    tissue family -> class
+-->

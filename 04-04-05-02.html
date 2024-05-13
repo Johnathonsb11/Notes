@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>Histology</title>
+        <style>
+            :root {
+                --back-gray: #413E39;
+                --accent-gray: #413d3a;
+                --text-orange: #E28C41;
+                --text-orange-dark: #C87C3A;
+                --text-orange-darker: #AA6931;
+            }
+
+            body {
+                background-color: var(--back-gray);
+            }
+
+            #container {
+                height: 75vh;
+                width: 75%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 3%;
+                margin-left: 10%
+            }
+
+            h1 {
+                color: var(--text-orange);
+                text-align: center;
+                font-size: 7vh;
+                margin: 10px;
+            }
+
+            h2, h3, li {
+                margin: 3px;
+            }
+
+            h2 {
+                color: var(--text-orange);
+            }
+
+            h3 {
+                color: var(--text-orange-dark);
+            }
+
+            li {
+                color: var(--text-orange-darker);
+            }
+
+            #btnData {
+                color: var(--text-orange);
+                width: 20%;
+                height: 15vh;
+                margin-top: 1%;
+                margin-left: 23%;
+                background-color: var(--accent-gray);
+                border: 3px solid var(--text-orange-darker);
+                border-radius: 7%;
+                font-size: 3vh;
+            }
+
+            #btnData:hover {
+                cursor: pointer;
+            }
+
+            #tissueList {
+                font-size: 2.5vh;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Histology</h1>
+        <div id="container">
+            <button id="btnData">Get Tissue Data</button>
+            <ul id="tissueList"></ul>
+        </div>
+        <script>
+            // XMLHTTPRequest (TCP/IP and HTTP) 
+            // DOMParser
+
+            const rolansEndpoint = "http://10.115.8.44/uploads/xmltest.xml";
+            const serverEndpoint = 'http://10.115.8.56/sites/histology/data.xml';
+
+            const btnData = document.getElementById('btnData');
+
+            btnData.addEventListener('click', ()=> {
+                const xhr = new XMLHttpRequest();
+
+                xhr.addEventListener('load', ()=> {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
+
+                    const animalTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamily')[0];
+                    // The value of the <tissueFamily nam="Animal"> node
+                    const animalText = animalTissueFamilyNode.attributes[0].textContent;
+
+                    const plantTissueFamilyNode = xmlDoc.querySelectorAll('tissueFamily')[1];
+                    // The value of the <tissueFamily nam="Plant"> node
+                    const plantText = plantTissueFamilyNode.attributes[0].textContent;
+
+                    const tissueList = document.querySelector('#tissueList');
+
+                    // creating the Animal Tissue HTML Elements
+                    const animalTissueListItem = document.createElement('li');
+                    const animalTissueFamilyHeading = document.createElement('h2');
+                    animalTissueFamilyHeading.textContent = animalText;
+                    animalTissueListItem.appendChild(animalTissueFamilyHeading);
+                    tissueList.appendChild(animalTissueListItem);
+
+                    // creating the Plant Tissue HTML Elements
+                    const plantTissueListItem = document.createElement('li')
+                    const plantTissueFamilyHeading = document.createElement('h2');
+                    plantTissueFamilyHeading.textContent = plantText;
+                    plantTissueListItem.appendChild(plantTissueFamilyHeading);
+                    tissueList.appendChild(plantTissueListItem);
+
+                    // create a list for the <tissueCategory> Nodes
+                    const tissueCategoriesList = document.createElement('ul');
+
+
+                    // create the Epithelial Tissue Category
+                    const epithelialTissueCategoryListItem = document.createElement('li');
+                    const epithelialTissueCategoryNode = animalTissueFamilyNode.children[0].children[0];
+                    const epithelialTissueCategoryHeading = document.createElement('h3');
+                    epithelialTissueCategoryHeading.textContent = epithelialTissueCategoryNode.attributes[0].value;
+
+                    epithelialTissueCategoryListItem.appendChild(epithelialTissueCategoryHeading);
+                    tissueCategoriesList.appendChild(epithelialTissueCategoryListItem);
+                    
+        
+                    // create the Connective Tissue Category
+                    const connectiveTissueCategoryListItem = document.createElement('li');
+                    const connectiveTissueCategoryNode = animalTissueFamilyNode.children[0].children[1];
+                    const connectiveTissueCategoryHeading = document.createElement('h3');
+                    connectiveTissueCategoryHeading.textContent = connectiveTissueCategoryNode.attributes[0].value;
+
+                    connectiveTissueCategoryListItem.appendChild(connectiveTissueCategoryHeading);
+                    tissueCategoriesList.appendChild(connectiveTissueCategoryListItem);
+
+
+                    // create the Muscle Tissue Category
+                    const muscleTissueCategoryListItem = document.createElement('li');
+                    const muscleTissueCategoryNode = animalTissueFamilyNode.children[0].children[2];
+                    const muscleTissueCategoryHeading = document.createElement('h3');
+                    muscleTissueCategoryHeading.textContent = connectiveTissueCategoryNode.attributes[0].value;
+
+                    muscleTissueCategoryListItem.appendChild(muscleTissueCategoryHeading);
+                    tissueCategoriesList.appendChild(muscleTissueCategoryListItem);
+
+
+                    // create the Nervous Tissue Category
+                    const nervousTissueCategoryListItem = document.createElement('li');
+                    const nervousTissueCategoryNode = animalTissueFamilyNode.children[0].children[3];
+                    const nervousTissueCategoryHeading = document.createElement('h3');
+                    nervousTissueCategoryHeading.textContent = nervousTissueCategoryNode.attributes[0].value
+
+                    nervousTissueCategoryListItem.appendChild(nervousTissueCategoryHeading);
+                    tissueCategoriesList.appendChild(nervousTissueCategoryListItem);
+
+                    // append all the tissue categories to the list
+                    animalTissueListItem.appendChild(tissueCategoriesList);
+                });
+
+                xhr.open('GET', serverEndpoint, true);
+                xhr.send();
+            });
+        </script>
+    </body>
+</html>

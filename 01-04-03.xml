@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+What we're doing:
+
+Animal Tissues:
+    1. Epithelial Tissues
+        1.1 Simple Squamous
+        1.2 Stratified Squamous
+        1.3 Simple Cuboidal
+        1.4 Simple Columnar
+        1.5 Psuedostratified Columnar
+    2. Connectice Tissues
+        2.1 Loose Connective
+        2.2 Dense Connective
+        2.3 Cartilagenous
+        2.4 Bone Tissue
+        2.5 Adipose Tissue
+        2.6 Blood
+    3. Muscle Tissues
+        3.1 Smooth muscle
+        3.2 Cardiac muscle
+        3.3 Skeletal muscle
+    4. Nerve Tissues
+        4.1 Neurons ; Neuroglia
+
+The whole list above is a hierarchy!
+-->
+
+<animalTissues>
+    <epithelialTissues>
+        <simpleSquamous/> <!--no content - closed out-->
+        <stratifiedSquamous/>
+        <simpleCuboidal/>
+        <psuedostratifiedColumnar/>
+    </epithelialTissues>
+    <connectiveTissues>
+        <looseConnective/>
+        <denseConnective/>
+        <cartilagenous/>
+        <boneTissue/>
+        <adiposeTissue/>
+        <blood/>
+    </connectiveTissues>
+    <muscleTissues>
+        <smoothMuscles/>
+        <cardiacMuscles/>
+        <skeletalMuscle/>
+    </muscleTissues>
+    <nerveTissues/>
+</animalTissues>

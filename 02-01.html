@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>02-01</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // Dot Notation
+            //     Is a reference that is used to acces a property or method of an object.
+            // object.property or object.method()
+
+            // 02-notes.txt line 78:
+
+            
+            document.write("Howdy, friend!<br>"); // writes directly to document, overwriting everything else
+            let msg = "Howdy, friend!";
+            document.write(msg);
+            prompt("Blarg?"); // prompt(message, defaultValue);
+            // prompt returns undefined, which indicates the absence of a value. As opposed to null, which indicates the absence of an object.
+
+            prompt();
+            prompt("message");
+            prompt("message", "default value");
+            
+
+            // 02-notes.txt line 94:
+        
+            // Variables and Primitive Data Types
+            let s1 = "hello, world"; // string data type
+
+            console.log(`s1 = ${s1}, data type is ${typeof(s1)}`);
+
+            let n1 = 100; // number data type
+            let n2 = 3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211;
+            let n3 = 15e2;
+
+            console.log(`n1 = ${n1}, data type is ${typeof(n1)}`);
+            console.log(`n2 = ${n2}, data type is ${typeof(n2)}`);
+            console.log(`n3 = ${n3}, data type is ${typeof(n3)}`);
+
+            let b1 = true; // boolean data type
+
+            console.log(`b1 = ${b1}, data type is ${typeof(b1)}`);
+
+            let null1 = null; // null data type
+
+            console.log(`null1 = ${null1}, data type is ${typeof(null1)}`);
+
+            let und1 = undefined; // undefined data type
+
+            console.log(`und1 = ${und1}, data type is ${typeof(und1)}`);
+
+
+            // Variables and Non-Primitive Types
+
+            // Arrays - Special objects that store more then one value at a time.
+            let nums = [1, 2, 3, 4, 5, 6]; // old school array syntax
+            let sum = 0;
+            for (let index = 0; index < nums.length; index++) {
+                sum += nums[index];
+            };
+            let avg = sum / nums.length;
+
+            console.log(`nums are ${nums}`);
+            console.log(`sum of nums is ${sum}`);
+            console.log(`avg of nums is ${avg}`);
+
+            // nums = new Array(100, 200, 300, 400, 500); // modern array syntax
+            // nums = forEach((num)=> {
+            //     console.log(num);
+            // });
+
+            let grid = [
+                [0, 1, 2], // < [0]
+                [3, 4, 5], // < [1]
+                [6, 7, 8]  // < [2]
+            //   ^  ^  ^
+            //  [0][1][2]
+            ];
+            console.table(grid);
+
+            /* An array in memory
+                Addr  | Value
+                0x100 | 1
+                0x200 | 2
+                0x300 | 3
+                0x400 | 4
+                0x500 | 5
+                0x600 | 6
+            */
+
+            // Objects - Data structure that have their own methods and properties.
+            //      Values are stored in name:value pairs (kvp)
+            let truck = {
+                make: "Chevrolet",
+                model: "Silverado 2500HD",
+                year: 2006,
+                wheels: [
+                    {
+                        position: "Front Driver",
+                        tire: {
+                            brand: "Yokohoma",
+                            size: "255R16",
+                            condition: "New",
+                        }
+                    },
+                    {
+                        position: "Front Passenger",
+                        tire: {
+                            brand: "Yokohoma",
+                            size: "255R16",
+                            condition: "New",
+                        }
+                    },
+                    {
+                        position: "Rear Driver",
+                        tire: {
+                            brand: "Yokohoma",
+                            size: "255R16",
+                            condition: "New",
+                        }
+                    },
+                    {
+                        position: "Rear Passenger",
+                        tire: {
+                            brand: "Yokohoma",
+                            size: "255R16",
+                            condition: "New",
+                        }
+                    },
+                ],
+                transmission: "automatic",
+                color: "white",
+                is4WD: true,
+            };
+
+            console.log(`needs tires = ${changeTires(truck)}`)
+
+            function changeTires(truck) {
+                let change = false;
+                truck.wheels.forEach((w)=> {
+                    if (w.tire.condition !== "New") 
+                        change = true;
+                });
+                return change;
+            }
+
+            console.log(truck);
+
+            // 02-notes.txt line 115:
+
+            // declared a mutable variable using lower camel-casing as string data
+            let greetingMessage = "Hello, World!";
+
+            // declared a mutable variable using lower camel-casing as string data
+            // BUT, can be HOISTED which is BAD. DONT DO. VAR BAD.
+            var closingMessage = "Goodbye, World!";
+
+            // declared an immutable variable using all caps as string data
+            const WARNING_MESSAGE = "Warning!";
+
+            console.log(greetingMessage);
+            console.log(closingMessage);
+            console.log(WARNING_MESSAGE);
+
+        </script>
+    </body>
+</html>

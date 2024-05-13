@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="uts-8">
+        <title>04-04-06</title>
+        <style>
+            body, input, button {
+                font-size: 1.2rem;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="mainForm" name="mainForm" method="GET" action="">
+            <input type="select" name="sel1" id="sel1">
+            <br>
+            <input type="text" name="text1" id="text1">
+            <br>
+            <input type="text" name="text2" id="text2">
+            <br>
+            <input type="checkbox" name="check1" id="check1">
+        </form>
+
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Form Properties</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>action</td>
+                    <td id="formAction"></td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td id="formAutocomplete"></td>
+                </tr>
+                <tr>
+                    <td>elements</td>
+                    <td id="formElements"></td>
+                </tr>
+                <tr>
+                    <td>encoding</td>
+                    <td id="formEncoding"></td>
+                </tr>
+                <tr>
+                    <td>length</td>
+                    <td id="formLength"></td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td id="formMethod"></td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td id="formName"></td>
+                </tr>
+                <tr>
+                    <td>noValidate</td>
+                    <td id="formNoValidate"></td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td id="formTarget"></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+
+            const mainForm = document.forms[0];
+            const sel = mainForm.sel1;
+
+            let newSpan = document.createElement('span');
+            newSpan.textContent = sel.disabled;
+            document.getElementsById('selectDisabled').appendChild;
+
+            for (let i = 0; i < sel.options.length; i++) {
+
+            }
+
+            sel.addEventListener('change', (e)=> {
+
+            });
+
+            const formAction = document.getElementById('formAction');
+            const formAutocomplete = document.getElementById('formAutocomplete');
+            const formElements = document.getElementById('formElements');
+            const formEncoding = document.getElementById('formEncoding');
+            const formLength = document.getElementById('formLength');
+            const formMethod = document.getElementById('formMethod');
+            const formName = document.getElementById('formName');
+            const formNoValidate = document.getElementById('formNoValidate');
+            const formTarget = document.getElementById('formTarget');
+
+            formAction.textContent = mainForm.action;
+            formAutocomplete.textContent = mainForm.autocomplete;
+            for (let index = 0; index < mainForm.elements.length; index++) {
+                const newDiv = document.createElement('div');
+                newDiv.textContent = mainForm.elements[index].name;
+                formElements.appendChild(newDiv);
+            }
+            formEncoding.textContent = mainForm.encoding;
+            formLength.textContent = mainForm.length;
+            formMethod.textContent = mainForm.method;
+            formName.textContent = mainForm.name;
+            formNoValidate.textContent = mainForm.noValidate;
+            formTarget.textContent = mainForm.target;
+        </script>
+    </body>
+</html>

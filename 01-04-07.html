@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <title>01-04-07</title>
+        <style>
+            body, input, button {
+                font-size: 1.2rem;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body cz-shortcut-listen="true" data-new->
+        <h1>01-04-07</h1>
+        <!--
+            READ: https://10.115.8.56/sites/myqlConnection.php
+
+            CREATE: https://10.115.8.56/sites/myqlCreateEndpoint.php
+            You an send a POST request to this url with names of "firstName", "lastName", and a row will be added to the table
+        -->
+        <!-- HTTP Methods : (GET POST PUT DELETE)-->
+        <form id="form1" name="form1" method="GET" action="" target="text1">
+            <label for="text1">Text 1</label>
+            <br>
+            <input type="text" name="text1" id="text1">
+            <br>
+            <input type="text" name="text2" id="text2">
+            <br>
+            <input type="reset">
+            <input type="submit">
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Form Properties</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>action</td>
+                    <td id="formAction"></td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td id="formAutocomplete"></td>
+                </tr>
+                <tr>
+                    <td>elements</td>
+                    <td id="formElements"></td>
+                </tr>
+                <tr>
+                    <td>encoding</td>
+                    <td id="formEncoding"></td>
+                </tr>
+                <tr>
+                    <td>length</td>
+                    <td id="formLength"></td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td id="formMethod"></td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td id="formName"></td>
+                </tr>
+                <tr>
+                    <td>noValidate</td>
+                    <td id="formNoValidate"></td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td id="formTarget"></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+
+            const theForm = document.forms[0];
+            const formAction = document.getElementById('formAction');
+            const formAutocomplete = document.getElementById('formAutocomplete');
+            const formElements = document.getElementById('formElements');
+            const formEncoding = document.getElementById('formEncoding');
+            const formLength = document.getElementById('formLength');
+            const formMethod = document.getElementById('formMethod');
+            const formName = document.getElementById('formName');
+            const formNoValidate = document.getElementById('formNoValidate');
+            const formTarget = document.getElementById('formTarget');
+
+            formAction.textContent = theForm.action;
+            formAutocomplete.textContent = theForm.autocomplete;
+            for (let index = 0; index < formElements.length; index++) {
+                const newDiv = document.createElement('div');
+                newDiv.textContent = theForm.elements[index].name;
+                formElements.appendChild(newDiv);
+            }
+            formEncoding.textContent = theForm.encoding;
+            formLength.textContent = theForm.length;
+            formMethod.textContent = theForm.method;
+            formName.textContent = theForm.name;
+            formNoValidate.textContent = theForm.noValidate;
+            formTarget.textContent = theForm.target;
+            debugger;
+
+            theForm.addEventListener('change', (e)=>{
+                // e is an Event object
+                console.log("the form has changed!")
+            });
+
+            // TODO: Research why this Form event does not fire
+            theForm.addEventListener('focus', (fe)=>{
+                // fe is an FocusEvent object
+                console.log("the form has focus!")
+            });
+
+            theForm.addEventListener('reset', (e)=>{
+                // e is an Event object
+                console.log(e);
+                console.log("the form has reset");
+                if (confirm("Are you sure") === false) {
+                    e.preventDefault(); // does as it says, prevents the default behavior
+                }
+            });
+
+            theForm.addEventListener('submit', (se)=>{
+                 // se is a sumbitEvent object
+                 console.log(se);
+            });
+        </script>
+    </body>
+</html>
+
+
+<!--
+    
+    FORM ELEMENT TYPES <form id ="theForm"> Inside here </form>
+(all listed items below are the most common-expected to know for the exam. Study on own)
+
+        <button>test</button>
+
+        button
+        checkbox
+        fieldset
+        legend
+        hidden
+        color
+        email
+        file
+        keygen
+        label
+        password
+        radio
+        reset
+        range
+        select
+        submit
+        text        AKA <input type="text"> (that was an example)
+        textarea
+        url
+
+        (NOTE: <input type="blah"> creates a new element for you: it is, in itself, not an element)
+
+    FORM OBJECT PROPERTIES [ const theForm = document.forms[0]; ]
+
+        action
+        autocomplete
+        elements
+        encoding
+        length
+        method
+        name
+        noValidate
+        target
+
+    FORM OBJECt METHODS
+
+        submit()
+        reset()
+    
+    FORM OBJECT EVENTS
+
+        onchange
+        onfocus
+        onreset
+        onsubmit
+
+    Validation is the enforcement of business rules.
+
+    Social Security Numbers
+    - Must be exactly 9 digits long
+    - DBA -> the date is stored as one long integer
+        123121234 (int)
+        123-12-1234 (varchar/nvarchar/char/nchar)
+    - MBA -> we must view the SSN with dashes (output)
+
+    ___-__-____ ?? how will you enforce the BRules?
+
+    Credit Card Numbers
+    - Must provide CC Number (16 digits)
+    - Must provide EXP Date (date)
+    - Must provide CVV Code (3-digits)
+    - Cardholder (OBJECT -> billing address -> shipping Address)
+    - CC Company
+
+    1234123412341234 1/29 123 <-- Valid Credit Card
+
+-->
